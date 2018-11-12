@@ -1,0 +1,12 @@
+<div>
+    <mat-card class="example-card">
+        <mat-card-header>            
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>{{todo.title}}</mat-card-title>
+        </mat-card-header>                
+    <mat-card-actions>
+        <button mat-button color="primary" *ngIf="!todo.done" (click)="change()">COMPLETE</button>
+        <button mat-button color="warn" (click)="delete()">REMOVE</button>
+    </mat-card-actions>
+</mat-card>
+</div>

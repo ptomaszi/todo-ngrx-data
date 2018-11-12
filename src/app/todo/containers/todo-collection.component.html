@@ -1,0 +1,24 @@
+<div>
+  <app-todo-header [count]="count$ | async" [completed]="completed$ | async">
+  </app-todo-header>
+  <app-todo-add (add)="addToDo($event)"></app-todo-add>
+  <div>
+    Tasks to do:
+        <app-todo
+            *ngFor="let todo of (todos$ | async)"
+            [todo]="todo"
+            (complete)="completeToDo($event)"
+            (remove)="removeToDo($event)">
+        </app-todo>
+  </div>  
+  <br />
+  <div>
+    Completed tasks:
+        <app-todo
+          *ngFor="let todo of (completedToDos$ | async)"
+          [todo]="todo"
+          (complete)="completeToDo($event)"
+          (remove)="removeToDo($event)">
+        </app-todo>
+  </div>  
+</div>
